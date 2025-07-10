@@ -2,7 +2,7 @@ name: YASH-Traffix-POC/Generic
 on:
   push:
     branches:
-    - none
+    - main
   # Github Actions does not support schedule branch filters. Scheduled workflows run on the latest commit on the default or base branch
   schedule:
   - cron: 0 4 * * 1,2,3,4,5
