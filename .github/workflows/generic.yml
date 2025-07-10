@@ -12,8 +12,8 @@ env:
   ServiceConnection: Serverless-Azure-Connection-Latest
   Source: BlazorAdmin
   WebAppName: samplewebapp001
-  projectkey: YASH-Traffix-POC_eShopOnWeb_ebb5628b-5fd8-4de0-86c7-9ac96a13c658
-  subscriptionID: fd39c7a6-bc2c-4b89-97d5-1e60d7f98aef
+  projectkey: YASH-POC_eShopOnWeb_exxxxxxxxx-5fd8-4de0-86c7-9ac96a13c658
+  subscriptionID: xxxxxxxx-bc2c-xxxx-xxxx-1e60d7f98aef
 jobs:
   Build:
     name: Build Job
