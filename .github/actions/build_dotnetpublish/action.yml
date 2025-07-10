@@ -3,7 +3,7 @@ inputs:
   project-path:
     description: "Path to the .csproj  file"
     required: true
-    build-config:
+  build-config:
     description: "Build configuration (e.g., Release)"
     required: false
     default: "Release"
