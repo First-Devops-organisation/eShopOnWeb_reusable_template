@@ -1,0 +1,8 @@
+name: Build_dotnetrestore
+runs:
+  using: composite
+  steps:
+  # The dotnet CLI does not accept glob patterns. Consider using a solution file to act on multiple projects at once.
+  - name: dotnet restore
+    run: dotnet restore **/*.csproj
+    shell: bash
