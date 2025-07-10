@@ -1,6 +1,16 @@
 name: Build_PublishArtifacts
+inputs:
+  artifact-name:
+    description: "Name of the artifact to publish"
+    required: true
+  path:
+    description: "Path to the artifact directory"
+    required: true
 runs:
   using: composite
   steps:
   - name: 'Publish Artifact: drop'
     uses: actions/upload-artifact@v4.1.0
+     with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.path }}
