@@ -29,6 +29,6 @@ runs:
         project-path: ${{ inputs.project-path }}
   - uses: "./.github/actions/build_publishartifacts"
     with:
-        name: ${{ inputs.artifact-name }}
+        artifact-name: ${{ inputs.artifact-name }}
         path: ${{ runner.temp }}/artifact
 
