@@ -22,3 +22,5 @@ jobs:
     - name: checkout
       uses: actions/checkout@v4.1.0
     - uses: "./.github/actions/devops_build_pipeline"
+      with:
+        project-path: src/ApplicationCore/ApplicationCore.csproj
