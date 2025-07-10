@@ -1,8 +1,12 @@
 name: Build_dotnetrestore
+inputs:
+  project-path:
+    description: "Path to the .csproj  file"
+    required: true
 runs:
   using: composite
   steps:
   # The dotnet CLI does not accept glob patterns. Consider using a solution file to act on multiple projects at once.
   - name: dotnet restore
-    run: dotnet restore **/*.csproj
+    run: dotnet restore ${{ inputs.project-path }}
     shell: bash
