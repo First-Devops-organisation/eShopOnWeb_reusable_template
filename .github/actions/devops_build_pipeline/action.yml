@@ -7,6 +7,13 @@ inputs:
     description: "Build configuration (e.g., Release)"
     required: false
     default: "Release"
+
+  artifact-name:
+    description: "Name of the artifact to publish"
+    required: true
+  path:
+    description: "Path to the artifact directory"
+    required: true
 runs:
   using: composite
   steps:
@@ -21,5 +28,6 @@ runs:
     with:
         project-path: ${{ inputs.project-path }}
   - uses: "./.github/actions/build_publishartifacts"
-    with:
-        project-path: ${{ inputs.project-path }}
+       with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.path }}
