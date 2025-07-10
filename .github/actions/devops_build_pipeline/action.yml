@@ -3,6 +3,10 @@ inputs:
   project-path:
     description: "Path to the .csproj file"
     required: true
+  build-config:
+    description: "Build configuration (e.g., Release)"
+    required: false
+    default: "Release"
 runs:
   using: composite
   steps:
@@ -12,6 +16,7 @@ runs:
   - uses: "./.github/actions/build_dotnetbuild"
     with:
         project-path: ${{ inputs.project-path }}
+        build-config: ${{ inputs.build-config }}
   - uses: "./.github/actions/build_dotnetpublish"
     with:
         project-path: ${{ inputs.project-path }}
