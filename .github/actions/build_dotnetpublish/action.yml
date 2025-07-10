@@ -1,7 +1,13 @@
 name: Build_dotnetpublish
+inputs:
+  project-path:
+    description: "Path to the .csproj  file"
+    required: true
 runs:
   using: composite
   steps:
   - name: dotnet publish
-    run: dotnet publish --configuration ${{ env.BuildConfiguration }} --output ${{ runner.temp }}
+    run: dotnet publish ${{ inputs.project-path }} --configuration ${{ env.BuildConfiguration }} --output ${{ runner.temp }}
     shell: bash
+
+
