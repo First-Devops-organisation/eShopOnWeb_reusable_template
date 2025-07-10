@@ -1,0 +1,24 @@
+name: YASH-Traffix-POC/Generic
+on:
+  push:
+    branches:
+    - none
+  # Github Actions does not support schedule branch filters. Scheduled workflows run on the latest commit on the default or base branch
+  schedule:
+  - cron: 0 4 * * 1,2,3,4,5
+env:
+  Name: BlazorAdmin
+  ProjectName: eShopOnWeb
+  ServiceConnection: Serverless-Azure-Connection-Latest
+  Source: BlazorAdmin
+  WebAppName: samplewebapp001
+  projectkey: YASH-Traffix-POC_eShopOnWeb_ebb5628b-5fd8-4de0-86c7-9ac96a13c658
+  subscriptionID: fd39c7a6-bc2c-4b89-97d5-1e60d7f98aef
+jobs:
+  Build:
+    name: Build Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4.1.0
+    - uses: "./.github/actions/devops_build_pipeline"
