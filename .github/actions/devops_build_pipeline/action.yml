@@ -1,4 +1,13 @@
 name: DevOps_Build_Pipeline
+inputs:
+  project-path:
+    description: "Path to the .csproj "
+    required: true
+  build-config:
+    description: "Build configuration (e.g., Release)"
+    required: false
+    default: "Release"
+
 runs:
   using: composite
   steps:
