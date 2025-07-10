@@ -1,9 +1,20 @@
 name: DevOps_Build_Pipeline
-
+inputs:
+  project-path:
+    description: "Path to the .csproj file"
+    required: true
 runs:
   using: composite
   steps:
   - uses: "./.github/actions/build_dotnetrestore"
+    with:
+        project-path: ${{ inputs.project-path }}
   - uses: "./.github/actions/build_dotnetbuild"
+    with:
+        project-path: ${{ inputs.project-path }}
   - uses: "./.github/actions/build_dotnetpublish"
+    with:
+        project-path: ${{ inputs.project-path }}
   - uses: "./.github/actions/build_publishartifacts"
+    with:
+        project-path: ${{ inputs.project-path }}
