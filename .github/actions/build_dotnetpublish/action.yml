@@ -11,7 +11,7 @@ runs:
   using: composite
   steps:
   - name: dotnet publish
-    run: dotnet publish ${{ inputs.project-path }} --configuration ${{ inputs.build-config }} --output ${{ runner.temp }}
+    run: dotnet publish ${{ inputs.project-path }} --configuration ${{ inputs.build-config }} --output ${{ runner.temp }}/artifact
     shell: bash
 
 
