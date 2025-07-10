@@ -24,6 +24,7 @@ jobs:
     - uses: "./.github/actions/devops_build_pipeline"
       with:
         project-path: src/ApplicationCore/ApplicationCore.csproj
-        artifact-name: drop-${{ github.run_id }}
+        artifact-name: drop--${{ github.run_id }}-${{ github.run_number }}
+        path: "${{ runner.temp }}/artifact"
       
     
